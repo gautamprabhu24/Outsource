@@ -81,7 +81,7 @@ const checkfull=()=>{
   
 return (
     <div>
-      <div name='container' className='flex items-center w-[100vw] bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg overflow-hidden  top-0'>
+      <div name='container' className='flex items-center w-[100vw] bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg'>
 
          <div name='opt' className='object-cover cursor-pointer relative order-1 md:order-2'><FaBars className='text-[#E0E1DD] h-[25px] w-[25px] md:hidden' onClick
          ={handleBarsClick} />
