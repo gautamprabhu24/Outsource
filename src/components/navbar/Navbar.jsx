@@ -81,7 +81,7 @@ const checkfull=()=>{
   
 return (
     <div>
-      <div name='container' className='flex items-center w-[100vw] bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg overflow-hidden  top-0'>
+      <div name='container' className='flex items-center w-[100vw] bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg'>
 
          <div name='opt' className='object-cover cursor-pointer relative order-1 md:order-2'><FaBars className='text-[#E0E1DD] h-[25px] w-[25px] md:hidden' onClick
          ={handleBarsClick} />
@@ -103,7 +103,7 @@ return (
          </div></>}
          </div>
 
-         <div name='logo' className='order-2 md:order-1 '>
+         <div name='logo' className='order-2 md:order-1'>
          <img src='/images/logo-name.png' alt='OUTSOURCE' className='h-[42px] w-[11pc] md:w-[12pc] -mr-3 cursor-pointer hover:scale-105'></img>
          </div>
 
