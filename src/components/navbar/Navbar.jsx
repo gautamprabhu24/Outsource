@@ -103,7 +103,7 @@ return (
          </div></>}
          </div>
 
-         <div name='logo' className='order-2 md:order-1 '>
+         <div name='logo' className='order-2 md:order-1'>
          <img src='/images/logo-name.png' alt='OUTSOURCE' className='h-[42px] w-[11pc] md:w-[12pc] -mr-3 cursor-pointer hover:scale-105'></img>
          </div>
 
@@ -160,4 +160,3 @@ return (
 }
 
 export default Navbar
-
