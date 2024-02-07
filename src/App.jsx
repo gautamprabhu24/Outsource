@@ -4,12 +4,30 @@ import Navbar from './components/navbar/Navbar'
 import Home from './features/homepage/Homepage'
 import Footer from './components/footer/Footer'
 import Headroom from 'react-headroom'
+import Chat from './chat/Chat'
+import Chats from './chats/Chats'
+import Add from './features/add/Add'
+import Gig from './features/gig/Gig'
+import Gigs from './features/gigs/Gigs'
+import Login from './features/login/Login'
+import Mygigs from './mygigs/Mygigs'
+import Orders from './orders/Orders'
+import Register from './register/Register'
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet
+} from "react-router-dom";
+
+
 function App()
  {
    const Layout=()=>{
     return ( <><Navbar/>
     <Outlet/>
-    <Footer/></>)
+    <Footer/>
+    </>)
    }
 
   const router = createBrowserRouter([
