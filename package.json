@@ -13,7 +13,6 @@
     "infinite-react-carousel": "^1.2.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-headroom": "^3.2.1",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.3",
     "screen-size-detector": "^1.0.4"

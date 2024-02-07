@@ -27,16 +27,8 @@
    @apply  text-sm text-[#E0E1DD] cursor-pointer font-amaze p-3 rounded-lg hover:underline decoration-2 decoration-white hover:font-bold underline-offset-8
     
 }
-.foritem{
-   @apply flex flex-col gap-3 flex-shrink-0 mr-4 bottom-0
-}
-.select-none {
-   user-select: none;
- }
-.foropt{
-   @apply p-2.5 hover:bg-[#0D1B2A] transition-all duration-200 flex flex-col
-}
-.fordropbtn{
-   @apply w-full m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-5  justify-between  left-0 cursor-pointer transition-all duration-200 select-none
+.forpopular
+{
+   @apply bg-[#0D1B2A] text-white font-thin p-1 rounded-lg hover:bg-[#365486] hover:scale-105
 }
 @tailwind utilities;
