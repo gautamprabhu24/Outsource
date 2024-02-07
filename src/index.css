@@ -27,4 +27,8 @@
    @apply  text-sm text-[#E0E1DD] cursor-pointer font-amaze p-3 rounded-lg hover:underline decoration-2 decoration-white hover:font-bold underline-offset-8
     
 }
+.forpopular
+{
+   @apply bg-[#0D1B2A] text-white font-thin p-1 rounded-lg hover:bg-[#365486] hover:scale-105
+}
 @tailwind utilities;
