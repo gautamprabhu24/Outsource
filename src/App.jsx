@@ -18,15 +18,12 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
-
-
 function App()
  {
    const Layout=()=>{
     return ( <><Navbar/>
     <Outlet/>
-    <Footer/>
-    </>)
+    <Footer/></>)
    }
 
   const router = createBrowserRouter([
@@ -71,7 +68,7 @@ function App()
 
   return (
     <div >
-      <Headroom><Navbar/></Headroom>
+      <RouterProvider router={router} />
     
     </div>
   )
