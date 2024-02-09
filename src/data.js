@@ -1,43 +1,36 @@
-import photography from '../public/images/photography.png'
-import interiordesign from '../public/images/interiordesign.png'
-import logodesign from '../public/images/logodesign.png'
-import marketing from '../public/images/marketing.png'
-import socialmarketing from '../public/images/socialmarketing.png'
-import videoediting from '../public/images/videoediting.png'
-import voiceover from '../public/images/voiceover.png'
-import webdev from '../public/images/webdev.png'
+
 
 export const cards = [
     {
       id: 1,
-      img: photography,
+      img: 'images/photography.png'
     },
     {
       id: 2,
-      img: interiordesign,
+      img: 'images/interiordesign.png'
     },
     {
       id: 3,
-      img: logodesign,
+      img: 'images/logodesign.png'
     },
     {
       id: 4,
-      img: marketing,
+      img: '/images/marketing.png'
     },
     {
       id: 5,
-      img: socialmarketing,
+      img: 'images/socialmarketing.png'
     },
     {
       id: 6,
-      img: videoediting,
+      img: 'images/videoediting.png'
     },
     {
       id: 7,
-      img: voiceover,
+      img: 'images/voiceover.png'
     },
     {
       id: 8,
-      img: webdev,
+      img:'images/webdev.png'
     },
   ];
