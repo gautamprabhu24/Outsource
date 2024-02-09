@@ -30,12 +30,7 @@
 {
    @apply bg-[#0D1B2A] text-white font-thin p-1 rounded-lg hover:bg-[#365486] hover:scale-105
 }
-<<<<<<< HEAD
-@tailwind utilities;
-
-=======
 .slick-slide > div{
    margin: 0 10px;
 }
 @tailwind utilities;
->>>>>>> 2e887076862ede7a35ad2b0f1e58f86b21af6bf0
