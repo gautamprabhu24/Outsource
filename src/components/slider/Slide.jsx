@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
 
 const Slide = ({children}) => {
   const SampleNextArrow = (props) => {
@@ -23,7 +24,7 @@ const Slide = ({children}) => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "grey", borderRadius:"20px",cursor:"pointer",width:"19px",height:"20px" }}
+        style={{ ...style, display: "block", background: "grey", borderRadius:"20px",cursor:"pointer", width:"19px",height:"20px" }}
         onClick={onClick}
       />
     );

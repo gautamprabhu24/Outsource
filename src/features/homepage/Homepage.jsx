@@ -3,6 +3,8 @@ import Featured from '../../components/featured/Featured'
 import Slide from '../../components/slider/Slide';
 import { cards } from '../../data';
 import CatCard from '../../components/catcard/CatCard';
+import About from '../../components/aboutus/About';
+import Bizz from '../../components/bizz/bizz';
 const Homepage = () => {
   return (
     <div className='homepage'>
@@ -15,6 +17,8 @@ const Homepage = () => {
         ))}
       </Slide>
       </div>
+      <About/>
+      <Bizz/>
     </div>
   )
 }
