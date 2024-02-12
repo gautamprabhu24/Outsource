@@ -11,7 +11,7 @@
    @apply text-[#E0E1DD] font-amaze border-[#E0E1DD] border-2 px-1 w-[4pc] hover:bg-[#E0E1DD] hover:text-[#0D1B2A] rounded-lg cursor-pointer
 }
 .forangle{
-   @apply  group-hover:rotate-180 text-[#E0E1DD] font-amaze
+   @apply  group-hover:rotate-180 text-[#E0E1DD] font-amaze transition duration-150 ease-in-out transform
 }
 .foroptspa
 {
@@ -23,14 +23,23 @@
 }
 .forcategories
 {
-   @apply  text-sm text-[#E0E1DD] cursor-pointer font-amaze p-3 rounded-lg hover:underline decoration-2 decoration-white hover:font-bold underline-offset-8
+   @apply  text-sm text-[#E0E1DD] cursor-pointer font-amaze p-3 rounded-lg hover:underline decoration-2 decoration-white hover:scale-110 underline-offset-8
     
 }
 .forpopular
 {
    @apply bg-[#0D1B2A] text-white font-thin p-1 rounded-lg hover:bg-[#365486] hover:scale-105
 }
+.forfootheads
+{
+   @apply flex p-3 text-white font-amaze font-medium md:hover:bg-inherit md:w-[40pc] flex-col
+}
+.forfootfea
+{
+   @apply pb-3 md:text-[20px] font-semibold flex justify-between w-full
+}
 .slick-slide > div{
    margin: 0 10px;
 }
+
 @tailwind utilities;

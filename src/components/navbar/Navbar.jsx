@@ -90,7 +90,7 @@ return (
                 </span><FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
               </div>
               <div className={isMobile ?'foroptspa group':'dropd group'}>
-                <span className={isMobile ?'':'fortext'}>Explore
+                <span className={isMobile ?'':'fortext'}>Discover
                 </span><FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
               </div>
               <div className={isMobile ?'foroptspa':'dropd'}>
