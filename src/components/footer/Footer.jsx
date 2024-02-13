@@ -1,213 +1,137 @@
+import React, { useState } from 'react'
+import { FaAngleDown, FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import ScreenSizeDetector from 'screen-size-detector';
 
-
-// import React from 'react'
-
-// const Footer = () => {
-//   return (
-//     <div name="footer">
-//       Footer
-      
-//     </div>
-//   )
-// }
-
-// export default Footer
-
-import React, { useState, useEffect } from 'react';
 
 
 const Footer = () => {
-  const [isMobile, setisMobile] = useState(false);
-  const [showFeatures, setShowFeatures] = useState(true);
-  const [isActiveCategories, setIsActiveCategories] = useState(false);
-  const [isActiveAbout, setIsActiveAbout] = useState(false);
-  const [isActiveSupport, setIsActiveSupport] = useState(false);
-  const [isActiveCommunity, setIsActiveCommunity] = useState(false);
-  const [isActiveBusiness, setIsActiveBusiness] = useState(false);
+  const screen = new ScreenSizeDetector();
 
-  const catfields = [
-    "Graphics & Design",
-    "Digital Marketing",
-    "Writing & Translation",
-    "Video & Animation",
-    "Music & Audio",
-    "Programming & Tech",
-    "Data",
-    "Business",
-    "Lifestyle",
-    "Photography",
-    "End-to-End Projects",
-    "Sitemap"
-  ];
+  const checkdevice=()=>{  
+      return screen.width < 768;};
 
-  const catAbout = [
-    "Careers",
-    "Press & News",
-    "Partnerships",
-    "Privacy Policy",
-    "Terms of Service",
-    "Intellectual Property Claims",
-    "Investor Relations"
-  ];
+      const [isMobile, setisMobile]=useState(checkdevice);
+      const [showFeatures1, setShowFeatures1] = useState(!isMobile);
+      const [showFeatures2, setShowFeatures2] = useState(!isMobile);
+      const [showFeatures3, setShowFeatures3] = useState(!isMobile);
+      const [showFeatures4, setShowFeatures4] = useState(!isMobile);
+      const [showFeatures5, setShowFeatures5] = useState(!isMobile);
 
-  const catSupport = [
-    "Help & Support",
-    "Trust & Safety",
-    "Selling on Platform",
-    "Buying on Platform",
-    "Guides",
-    "Workspace",
-    "Invoice Software",
-    "Learn",
-    "Online Courses",
-  ];
+      const  handleResize=()=>{
+        if (screen.width < 768) {
+          setisMobile(true);
+          setShowFeatures1(false);
+          setShowFeatures2(false);
+          setShowFeatures3(false);
+          setShowFeatures4(false);
+          setShowFeatures5(false);
+          
+        } else {
+          setisMobile(false);
+          setShowFeatures1(true);
+          setShowFeatures2(true);
+          setShowFeatures3(true);
+          setShowFeatures4(true);
+          setShowFeatures5(true);
+          
+        }
+      };
 
-  const catCom = [
-    "Customer Success Stories",
-    "Community Hub",
-    "Forum",
-    "Events",
-    "Blog",
-    "Influencers",
-    "Affiliates",
-    "Podcast",
-    "Invite a Friend",
-    "Become a Seller",
-    "Community Standards",
-  ];
+      window.addEventListener("resize",handleResize);
 
-  const catSol = [
-    "About Business Solutions",
-    "Pro",
-    "Certified",
-    "Enterprise",
-    "ClearVoice",
-    "Content Marketing",
-  ];
+      const handleBarsClick1 = () => {
+        setShowFeatures1(!showFeatures1);
+      };
+      const handleBarsClick2 = () => {
+        setShowFeatures2(!showFeatures2);
+      };
+      const handleBarsClick3 = () => {
+        setShowFeatures3(!showFeatures3);
+      };
+      const handleBarsClick4 = () => {
+        setShowFeatures4(!showFeatures4);
+      };
+      const handleBarsClick5 = () => {
+        setShowFeatures5(!showFeatures5);
+      };
 
-  const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setisMobile(true);
-      setShowFeatures(false);
-    } else {
-      setisMobile(false);
-      setShowFeatures(true);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
-    <footer className='footer flex flex-col bottom-0 w-full text-white bg-[#0D1B2A] mt-3 mb-3 overflow-x-hidden'>
-      <div className='container mx-auto max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl pt-10 px-3 flex flex-col justify-between min-h-screen'>
-        <div className={` ${isMobile ? ' fordropbtn ' : 'top flex justify-between gap-20 cursor-pointer'}`}>
+    <div name="footer" className='bg-[#0F1035] flex flex-col'>
+      <div name='drops' className='flex flex-col m-4 bg-[#1B263B] rounded-lg md:flex-row md:items-start'>
+        <div name='heading' className='forfootheads group'>
+          <div className='forfootfea' onClick={handleBarsClick1}><span>Categories</span>
+          <FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
+          {showFeatures1 && <div className='flex flex-col gap-1'>
+            <span className='hover:bg-[#365486]'>Graphics & Design</span>
+            <span className='hover:bg-[#365486]'>Digital Marketing</span>
+            <span className='hover:bg-[#365486]'>Photography</span>
+            <span className='hover:bg-[#365486]'>Video & animation</span>
+            <span className='hover:bg-[#365486]'>Business</span>
+            <span className='hover:bg-[#365486]'>Music & audio</span>
+          </div>}
+                </div>
+        <div name='heading' className='forfootheads group'>
+        <div className='forfootfea' onClick={handleBarsClick2}><span>About</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
+        {showFeatures2 && <div className='flex flex-col gap-1'>
+            <span className='hover:bg-[#365486]'>Careers</span>
+            <span className='hover:bg-[#365486]'>Partnerships</span>
+            <span className='hover:bg-[#365486]'>Privacy policy</span>
+            <span className='hover:bg-[#365486]'>Terms of service</span>
+          </div>}
           
-        <div className={`item  ${isMobile ? "w-96 m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-20 justify-between relative ${isActiveCategories ? 'absolute top-13 my-0 m-auto p-10 bg-[#1B263B] shadow-md text-white font-medium w-full left-0 cursor-pointer' : ''} cursor-pointer transition-all duration-200 select-none" : "foritem"}`}>
-          <span className={`text-lg`} onClick={() => setIsActiveCategories(!isActiveCategories)}>
-            Categories
-            {isMobile ? (
-              isActiveCategories ? <span className="ml-2">&#x25BC;</span> : <span className="ml-2">&#x25B6;</span>
-            ) : null}
-          </span>
-          {(isMobile && isActiveCategories) || !isMobile ? (
-          <div className={` ${isMobile ? 'fordropbtn' : 'flex flex-col font-normal gap-3'}`}>
-              {catfields.map((category, index) => (
-                <span key={index} className={`${isMobile ? 'foropt' : ''}`}>{category}</span>
-              ))}
-          </div>
-          ):null}
+        </div>
+        <div name='heading' className='forfootheads group'>
+          <div className='forfootfea' onClick={handleBarsClick3}>
+          <span>Support and Education</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
+          {showFeatures3 && <div className='flex flex-col gap-1'>
+            <span className='hover:bg-[#365486]'>Help & Support</span>
+            <span className='hover:bg-[#365486]'>Selling on Outsource</span>
+            <span className='hover:bg-[#365486]'>Buying on Outsource</span>
+            <span className='hover:bg-[#365486]'>Outsource Guides</span>
+          </div>}
+          
+        </div>
+        <div name='heading' className='forfootheads group'>
+        <div className='forfootfea' onClick={handleBarsClick4}><span>Community</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
+        {showFeatures4 && <div className='flex flex-col gap-1'>
+            <span className='hover:bg-[#365486]'>Community hub</span>
+            <span className='hover:bg-[#365486]'>Invite a freind</span>
+            <span className='hover:bg-[#365486]'>Become a seller</span>
+            <span className='hover:bg-[#365486]'>Affiliate</span>
+          </div>}
+          
+        </div>
+        <div name='heading' className='forfootheads group'>
+        <div className='forfootfea' onClick={handleBarsClick5}><span>Business</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
+        {showFeatures5 && <div className='flex flex-col gap-1'>
+            <span className='hover:bg-[#365486]'>About us</span>
+            <span className='hover:bg-[#365486]'>Contact sales</span>
+            <span className='hover:bg-[#365486]'>Pro</span>
+            <span className='hover:bg-[#365486]'>Certified</span>
+            <span className='hover:bg-[#365486]'>Agency</span>
+          </div>}
+          
         </div>
 
-        <div className={`item  ${isMobile ? "w-96 m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-20 justify-between relative ${isActiveCategories ? 'absolute top-13 my-0 m-auto p-10 bg-[#1B263B] shadow-md text-white font-medium w-full left-0 cursor-pointer' : ''} cursor-pointer transition-all duration-200 select-none" : "foritem"}`}>
-          <span className={`text-lg`} onClick={() => setIsActiveAbout(!isActiveAbout)}>
-            About
-            {isMobile ? (
-              isActiveAbout ? <span className="ml-2">&#x25BC;</span> : <span className="ml-2">&#x25B6;</span>
-            ) : null}
-          </span>
-          {(isMobile && isActiveAbout) || !isMobile ? (
-          <div className={` ${isMobile ? 'fordropbtn' : 'flex flex-col font-normal gap-3'}`}>
-              {catAbout.map((category, index) => (
-                <span key={index}  className={`${isMobile ? 'foropt' : ''}`}>{category}</span>
-              ))}
-          </div>
-          ):null}
-        </div>
-
-        <div className={`item  ${isMobile ? "w-96 m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-20 justify-between relative ${isActiveCategories ? 'absolute top-13 my-0 m-auto p-10 bg-[#1B263B] shadow-md text-white font-medium w-full left-0 cursor-pointer' : ''} cursor-pointer transition-all duration-200 select-none" : "foritem"}`}>
-          <span className={`text-lg`} onClick={() => setIsActiveSupport(!isActiveSupport)}>
-            Support and Education
-            {isMobile ? (
-              isActiveSupport ? <span className="ml-2">&#x25BC;</span> : <span className="ml-2">&#x25B6;</span>
-            ) : null}
-          </span>
-          {(isMobile && isActiveSupport) || !isMobile ? (
-          <div className={` ${isMobile ? 'fordropbtn' : 'flex flex-col font-normal gap-3'}`}>
-              {catAbout.map((category, index) => (
-                <span key={index} className={`${isMobile ? 'foropt' : ''}`}>{category}</span>
-              ))}
-          </div>
-          ):null}
-        </div>
-
-        <div className={`item  ${isMobile ? "w-96 m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-20 justify-between relative ${isActiveCategories ? 'absolute top-13 my-0 m-auto p-10 bg-[#1B263B] shadow-md text-white font-medium w-full left-0 cursor-pointer' : ''} cursor-pointer transition-all duration-200 select-none" : "foritem"}`}>
-          <span className={`text-lg`} onClick={() => setIsActiveCommunity(!isActiveCommunity)}>
-            Community
-            {isMobile ? (
-              isActiveCommunity ? <span className="ml-2">&#x25BC;</span> : <span className="ml-2">&#x25B6;</span>
-            ) : null}
-          </span>
-          {(isMobile && isActiveCommunity) || !isMobile ? (
-          <div className={` ${isMobile ? 'fordropbtn' : 'flex flex-col font-normal gap-3'}`}>
-              {catCom.map((category, index) => (
-                <span key={index} className={`${isMobile ? 'foropt' : ''}`}>{category}</span>
-              ))}
-          </div>
-          ):null}
-        </div>
-
-        <div className={`item  ${isMobile ? "w-96 m-0 mx-auto p-10 bg-[#1B263B] shadow-md text-white font-bold flex flex-col gap-20 justify-between relative ${isActiveCategories ? 'absolute top-13 my-0 m-auto p-10 bg-[#1B263B] shadow-md text-white font-medium w-full left-0 cursor-pointer' : ''} cursor-pointer transition-all duration-200 select-none" : "foritem"}`}>
-          <span className={`text-lg`} onClick={() => setIsActiveBusiness(!isActiveBusiness)}>
-            Business
-            {isMobile ? (
-              isActiveBusiness ? <span className="ml-2">&#x25BC;</span> : <span className="ml-2">&#x25B6;</span>
-            ) : null}
-          </span>
-          {(isMobile && isActiveBusiness) || !isMobile ? (
-          <div className={` ${isMobile ? 'fordropbtn' : 'flex flex-col font-normal gap-3'}`}>
-              {catCom.map((category, index) => (
-                <span key={index} className={`${isMobile ? 'foropt' : ''}`}>{category}</span>
-              ))}
-          </div>
-          ):null}
-        </div>
       </div>
-
-      <hr className={`my-2 h-0 border border-solid border-gray-400 `} />
-
-      <div className={`bottom flex items-center justify-between cursor-pointer pb-4 ${isMobile ? 'flex-col pt-3' : ''}`}>
-        <div className='left flex items-center gap-2'>
-          <img src='../../images/logo-name.png' alt='logo' className={`w-60 h-10 ${isMobile ? 'w-20.5 h-7 gap-2' : ''}`} />
-        </div>
-        <div className={`right flex items-center gap-7.5 transition-all duration-300 ${isMobile ? 'flex-col mt-2' : ''}`}>
-          <div className={`socials flex items-center gap-5 ${isMobile ? 'text-xs mt-4 ' : ''}`}>
-            <img src="/images/twitter.png" alt="" />
-            <img src="/images/facebook.png" alt="" />
-            <img src="/images/linkedin.png" alt="" />
-            <img src="/images/pinterest.png" alt="" />
-            <img src="/images/instagram.png" alt="" />
-          </div>
+      <div className='p-4'>
+      <div name='sm' className='flex flex-col items-center md:flex-row md:justify-between'>
+      <Link to="/"><img src='/images/logo-name.png' alt='OUTSOURCE' className='h-[35px] w-[130px]'></img></Link>
+        <span className='pt-2 text-gray-500 font-amaze font-normal'>Outsource - Freelance Marketplace application</span>
+        <div className='flex p-2 text-white gap-5'>
+          <FaFacebook className='h-[20px] w-[20px]'/>
+          <FaInstagram className='h-[20px] w-[20px]'/>
+          <FaPinterest className='h-[20px] w-[20px]'/>
+          <FaXTwitter className='h-[20px] w-[20px]'/>
         </div>
       </div>
       </div>
-      </footer>
-      );
-      }
+      
+    </div>
+  )
+}
 
 export default Footer;
