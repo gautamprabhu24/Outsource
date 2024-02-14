@@ -59,7 +59,7 @@ function App()
         element: <Chats />
       },
       {
-        path:"/chat:id",
+        path:"/chat/:id",
         element: <Chat />
       }
     ]
