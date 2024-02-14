@@ -36,7 +36,7 @@ function App()
       },
       {
         path:"/gigs",
-        element: <Gig />
+        element: <Gigs />
       },
       {
         path:"/gig/:id",
