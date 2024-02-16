@@ -47,9 +47,9 @@ const Chats = ({item}) => {
 
   return (
    <div className="">
-    <div class="container" className="" >
+    <div name="container" className="" >
       <h1 className="font-amaze font-semibold text-[30px] pl-5">Conversations</h1>
-      <div class="top" className="flex justify-between p-1 gap-2 px-6" >
+      <div name="top" className="flex justify-between p-1 gap-2 px-6" >
         <h2 className="font-amaze font-semibold text-gray-500 text-lg ">All Messages</h2>
         {searchActive ? (
             <input
@@ -65,12 +65,12 @@ const Chats = ({item}) => {
             }} />
           )}
       </div>
-      <div class="bottom" className="flex flex-col h-[23pc] border-2 border-[#778DA9] p-5 m-5 rounded-lg overflow-y-scroll bg-[#415A77] w-90% scrollable-content">
+      <div name="bottom" className="flex flex-col h-[23pc] border-2 border-[#778DA9] p-5 m-5 rounded-lg overflow-y-scroll bg-[#415A77] w-90% scrollable-content">
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden ">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden ">
              <div name='userchat' className="flex items-center p-2 gap-2  ">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Gl4edCwYs0OFjJ6_VJH8tk-msV2YHQwVjnKOJXWpUQ&s" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col ">
+              <div name="userchatinfo" className="flex flex-grow flex-col ">
                 <span className="font-amaze text-[22px] font-normal text-white ">Ladiij</span>
                 <p className="font-amaze font-light text-white"> {shortenedMessage}...</p>
               </div>
@@ -81,10 +81,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
              <div name='userchat' className="flex items-center p-2 gap-2 ">
                 <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col ">
+              <div name="userchatinfo" className="flex flex-grow flex-col ">
                 <span className="font-amaze text-[22px] font-normal text-white">Ladiij2</span>
                 <p className="font-amaze font-light text-white"> {shortenedMessage}...</p>
               </div>
@@ -95,10 +95,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden ">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden ">
              <div name='userchat' className="flex items-center p-2 gap-2  ">
                 <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col">
+              <div name="userchatinfo" className="flex flex-grow flex-col">
                 <span className="font-amaze text-[22px] font-normal text-white">Ladiij3</span>
                 <p className="font-amaze font-light text-white "> {shortenedMessage}...</p>
               </div>
@@ -109,10 +109,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
              <div name='userchat' className="flex items-center p-2 gap-2 ">
                 <img src="https://images.pexels.com/photos/1771383/pexels-photo-1771383.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col ">
+              <div name="userchatinfo" className="flex flex-grow flex-col ">
                 <span className="font-amaze text-[22px] font-normal text-white">modi g fan</span>
                 <p className="font-amaze font-light text-white"> {shortenedMessage}...</p>
               </div>
@@ -123,10 +123,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
              <div name='userchat' className="flex items-center p-2 gap-2 ">
                 <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col">
+              <div name="userchatinfo" className="flex flex-grow flex-col">
                 <span className="font-amaze text-[22px] font-normal text-white">randy ortan</span>
                 <p className="font-amaze font-light text-white"> {shortenedMessage}...</p>
               </div>
@@ -137,10 +137,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
              <div name='userchat' className="flex items-center p-2 gap-2 ">
                 <img src="https://images.pexels.com/photos/1062280/pexels-photo-1062280.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col ">
+              <div name="userchatinfo" className="flex flex-grow flex-col ">
                 <span className="font-amaze text-[22px] font-normal text-white">joe mama</span>
                 <p className="font-amaze font-light text-white "> {shortenedMessage}...</p>
               </div>
@@ -151,10 +151,10 @@ const Chats = ({item}) => {
             </div>
           </Link>
           <Link to="/chat/123" className="w-full p-2">
-            <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
+            <div name="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden">
              <div name='userchat' className="flex items-center p-2 gap-2 ">
                 <img src="https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pp" className="h-[40px] w-[40px] rounded-full object-cover"/>
-              <div class="userchatinfo" className="flex flex-grow flex-col">
+              <div name="userchatinfo" className="flex flex-grow flex-col">
                 <span className="font-amaze text-[22px] font-normal text-white">ana</span>
                 <p className="font-amaze font-light text-white"> {shortenedMessage}...</p>
               </div>
