@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 const Chat = () => {
   return (
-    <div class="main" className='flex justify-center '>
-      <div class="container" className=' h-full w-[550px] m-11 md:w-[1200px]'>
+    <div class="main" className='flex justify-center bg-[#7FC7D9] '>
+      <div class="container" className=' h-full w-[550px] m-11 md:w-[1200px] bg-white rounded-xl'>
         <span class="breadcrumbs" className='font-normal text-[13px] text-gray-400 p-4'>
           <Link to="/chats">Messages</Link> &gt; ladiij &gt;
         </span>
-        <div class="messages" className='my-3 px-2 sm:px-12 flex flex-col gap-5 h-96 overflow-y-auto'>
+        <div class="messages" className='my-3 px-2 sm:px-12 flex flex-col gap-5 h-96 overflow-y-auto shadow-lg scrollable-content'>
           <div class="item" className='foritem'>
             <img
               src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -206,9 +206,9 @@ const Chat = () => {
           </div>
         </div>
         <hr className='border-2 mb-6'/>
-        <div class="write" className='flex items-center justify-between'>
-          <input type="text" placeholder="write a message" className='h-[35px] sm:w-[400px] md:w-[600px] rounded-lg'/>
-          <button class='rounded-lg bg-[#0F1035] text-white w-[60px] h-[35px] p-2'>Send</button>
+        <div class="write" className='flex items-center justify-around pb-2'>
+          <input type="text" placeholder="write a message..." className='h-[35px] sm:w-[400px] md:w-[600px] rounded-lg px-2'/>
+          <button class='forpopular w-[90px]'>Send</button>
         </div>
       </div>
     </div>

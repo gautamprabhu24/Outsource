@@ -53,4 +53,12 @@
 .forclmsg{
    @apply  mx-auto bg-[#365486] text-white p-2 rounded-l-3xl rounded-b-3xl text-[13px] md:text-[16px]
 }
+
 @tailwind utilities;
+.scrollable-content {
+   height: 440px;
+ }
+ 
+ .scrollable-content::-webkit-scrollbar {
+   display: none;
+ }

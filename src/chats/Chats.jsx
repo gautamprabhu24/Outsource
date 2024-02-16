@@ -50,7 +50,7 @@ const Chats = ({item}) => {
     <div class="container" className="" >
       <h1 className="font-amaze font-semibold text-[30px] pl-5">Conversations</h1>
       <div class="top" className="flex justify-between p-1 gap-2 px-6" >
-        <h2 className="font-amaze font-medium text-lg">All Messages</h2>
+        <h2 className="font-amaze font-semibold text-gray-500 text-lg ">All Messages</h2>
         {searchActive ? (
             <input
               type="text"
@@ -65,7 +65,7 @@ const Chats = ({item}) => {
             }} />
           )}
       </div>
-      <div class="bottom" className="flex flex-col h-[23pc] border-2 border-[#778DA9] p-5 m-5 rounded-lg overflow-y-scroll bg-[#415A77] w-90%">
+      <div class="bottom" className="flex flex-col h-[23pc] border-2 border-[#778DA9] p-5 m-5 rounded-lg overflow-y-scroll bg-[#415A77] w-90% scrollable-content">
           <Link to="/chat/123" className="w-full p-2">
             <div class="messages" className="bg-[#778DA9] h-[62px] w-full rounded-lg hover:bg-[#0D1B2A] overflow-hidden ">
              <div name='userchat' className="flex items-center p-2 gap-2  ">
