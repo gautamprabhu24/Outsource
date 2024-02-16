@@ -62,9 +62,9 @@ const Footer = () => {
     <div name="footer" className='bg-[#0F1035] flex flex-col'>
       <div name='drops' className='flex flex-col m-4 bg-[#1B263B] rounded-lg md:flex-row md:items-start'>
         <div name='heading' className='forfootheads group'>
-          <div className='forfootfea' onClick={handleBarsClick1}><span>Categories</span>
-          <FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
-          {showFeatures1 && <div className='flex flex-col gap-1'>
+          <div className='forfootfea' onClick= {isMobile ? handleBarsClick1 : null}><span>Categories</span>
+          <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures1 ? 'rotate-180' : ''}`}/></div>
+          {showFeatures1 && <div className='flex flex-col gap-1 cursor-pointer'>
             <span className='hover:bg-[#365486]'>Graphics & Design</span>
             <span className='hover:bg-[#365486]'>Digital Marketing</span>
             <span className='hover:bg-[#365486]'>Photography</span>
@@ -74,8 +74,9 @@ const Footer = () => {
           </div>}
                 </div>
         <div name='heading' className='forfootheads group'>
-        <div className='forfootfea' onClick={handleBarsClick2}><span>About</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
-        {showFeatures2 && <div className='flex flex-col gap-1'>
+        <div className='forfootfea' onClick= {isMobile ? handleBarsClick2 : null}><span>About</span>
+        <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures2 ? 'rotate-180' : ''}`}/></div>
+        {showFeatures2 && <div className='flex flex-col gap-1 cursor-pointer'>
             <span className='hover:bg-[#365486]'>Careers</span>
             <span className='hover:bg-[#365486]'>Partnerships</span>
             <span className='hover:bg-[#365486]'>Privacy policy</span>
@@ -84,9 +85,10 @@ const Footer = () => {
           
         </div>
         <div name='heading' className='forfootheads group'>
-          <div className='forfootfea' onClick={handleBarsClick3}>
-          <span>Support and Education</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
-          {showFeatures3 && <div className='flex flex-col gap-1'>
+          <div className='forfootfea' onClick= {isMobile ? handleBarsClick3 : null}>
+          <span>Support and Education</span>
+          <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures3 ? 'rotate-180' : ''}`}/></div>
+          {showFeatures3 && <div className='flex flex-col gap-1 cursor-pointer'>
             <span className='hover:bg-[#365486]'>Help & Support</span>
             <span className='hover:bg-[#365486]'>Selling on Outsource</span>
             <span className='hover:bg-[#365486]'>Buying on Outsource</span>
@@ -95,8 +97,9 @@ const Footer = () => {
           
         </div>
         <div name='heading' className='forfootheads group'>
-        <div className='forfootfea' onClick={handleBarsClick4}><span>Community</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
-        {showFeatures4 && <div className='flex flex-col gap-1'>
+        <div className='forfootfea' onClick= {isMobile ? handleBarsClick4 : null}><span>Community</span>
+        <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures4 ? 'rotate-180' : ''}`}/></div>
+        {showFeatures4 && <div className='flex flex-col gap-1 cursor-pointer'>
             <span className='hover:bg-[#365486]'>Community hub</span>
             <span className='hover:bg-[#365486]'>Invite a freind</span>
             <span className='hover:bg-[#365486]'>Become a seller</span>
@@ -105,8 +108,9 @@ const Footer = () => {
           
         </div>
         <div name='heading' className='forfootheads group'>
-        <div className='forfootfea' onClick={handleBarsClick5}><span>Business</span><FaAngleDown className='group-hover:rotate-180 md:hidden transition duration-150 ease-in-out transform'/></div>
-        {showFeatures5 && <div className='flex flex-col gap-1'>
+        <div className='forfootfea' onClick= {isMobile ? handleBarsClick5 : null}><span>Business</span>
+        <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures5 ? 'rotate-180' : ''}`}/></div>
+        {showFeatures5 && <div className='flex flex-col gap-1 cursor-pointer'>
             <span className='hover:bg-[#365486]'>About us</span>
             <span className='hover:bg-[#365486]'>Contact sales</span>
             <span className='hover:bg-[#365486]'>Pro</span>
@@ -134,5 +138,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
-
+export default Footer;

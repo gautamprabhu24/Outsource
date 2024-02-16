@@ -11,7 +11,7 @@
    @apply text-[#E0E1DD] font-amaze border-[#E0E1DD] border-2 px-1 w-[4pc] hover:bg-[#E0E1DD] hover:text-[#0D1B2A] rounded-lg cursor-pointer
 }
 .forangle{
-   @apply  group-hover:rotate-180 text-[#E0E1DD] font-amaze transition duration-150 ease-in-out transform
+   @apply  text-[#E0E1DD] font-amaze transition duration-150 ease-in-out transform
 }
 .foroptspa
 {
@@ -41,5 +41,24 @@
 .slick-slide > div{
    margin: 0 10px;
 }
+.foritem{
+   @apply flex gap-5 max-w-xl text-[18px]
+}
+.foritemowner{
+   @apply flex gap-5 max-w-xl text-[18px] flex-row-reverse self-end
+}
+.formsg{
+   @apply  mx-auto bg-[#7FC7D9] text-white p-2 rounded-r-3xl rounded-b-3xl text-[13px] md:text-[16px] 
+}
+.forclmsg{
+   @apply  mx-auto bg-[#365486] text-white p-2 rounded-l-3xl rounded-b-3xl text-[13px] md:text-[16px]
+}
 
 @tailwind utilities;
+.scrollable-content {
+   height: 440px;
+ }
+ 
+ .scrollable-content::-webkit-scrollbar {
+   display: none;
+ }
