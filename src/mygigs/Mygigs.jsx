@@ -38,7 +38,7 @@ function Mygigs() {
               />
             </td>
             <td>Stunning concept art</td>
-            <td>59.<sup>99</sup></td>
+            <td>₹8900.<sup>0</sup></td>
             <td>13</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer"/>
@@ -54,7 +54,7 @@ function Mygigs() {
               />
             </td>
             <td>Ai generated concept art</td>
-            <td>120.<sup>99</sup></td>
+            <td>₹12000.<sup>0</sup></td>
             <td>41</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer" />
@@ -70,7 +70,7 @@ function Mygigs() {
               />
             </td>
             <td>High quality digital character</td>
-            <td>79.<sup>99</sup></td>
+            <td>₹7999.<sup>99</sup></td>
             <td>55</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer" />
@@ -86,7 +86,7 @@ function Mygigs() {
               />
             </td>
             <td>Illustration hyper realistic painting</td>
-            <td>119.<sup>99</sup></td>
+            <td>₹1200.<sup>99</sup></td>
             <td>29</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer" />
@@ -102,7 +102,7 @@ function Mygigs() {
               />
             </td>
             <td>Original ai generated digital art</td>
-            <td>59.<sup>99</sup></td>
+            <td>₹6999.<sup>89</sup></td>
             <td>34</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer" />
@@ -118,7 +118,7 @@ function Mygigs() {
               />
             </td>
             <td>Text based ai generated art</td>
-            <td>110.<sup>99</sup></td>
+            <td>₹2900.<sup>27</sup></td>
             <td>16</td>
             <td>
             <MdDeleteForever className="mx-auto cursor-pointer" />
