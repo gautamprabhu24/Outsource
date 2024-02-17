@@ -22,9 +22,9 @@ const Add = () => {
               <option value="music">Music</option>
             </select>
             <label htmlFor="">Cover Image</label>
-            <input type="file" className="bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1 "/>
+            <input type="file" className=" rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1 "/>
             <label htmlFor="">Upload Images</label>
-            <input type="file" multiple className="bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1"/>
+            <input type="file" multiple className=" rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1"/>
             <label htmlFor="">Description</label>
             <textarea name="" id="" placeholder="Brief descriptions to introduce your service to customers" cols="0" rows="16" className="p-2 bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]"></textarea>
           </div>
@@ -43,7 +43,7 @@ const Add = () => {
             <input type="text" placeholder="e.g. setting up a domain" className="bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1"/>
             <input type="text" placeholder="e.g. hosting" className="bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1" />
             <label htmlFor="">Price</label>
-            <input type="number" />
+            <input type="number"  className="bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1" />
           </div>
           <button className="p-5 font-amaze font-medium bg-[#0F1035] text-white  hover:bg-[#365486]  rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]">Create</button>
         </div>
