@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useRef, useEffect} from 'react'
 import Gigcard from '../../components/gigcard/Gigcard'
 import { gigs } from '../../data';
 import {FaAngleDown} from "react-icons/fa6";
@@ -14,6 +14,21 @@ const Gigs = () => {
     setSort(type);
     setOpen(false);
   }
+  const dropdownRef = useRef(null);
+  const handleBodyClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('click', handleBodyClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleBodyClick);
+    };
+  }, [open]);
 
   return (
     <div name='gigs' className=''>
@@ -30,7 +45,7 @@ const Gigs = () => {
           </div>
           <div name='right' className='flex gap-2 items-center pt-2 md:w-1/2 md:justify-end'>
             <span className='font-amaze font-semibold text-[#0D1B2A]'>Sort By: </span>
-            <div className='flex items-center gap-2 relative group' onClick={()=>setOpen(!open)}>
+            <div className='flex items-center gap-2 relative group cursor-pointer' onClick={()=>setOpen(!open)} ref={dropdownRef}>
             <span className='text-gray-500 font-medium '>{sort === "sales" ? "Best Selling" : "Newest"}</span>
             <FaAngleDown className='text-gray-500 font-medium group-hover:rotate-180 transition duration-150 ease-in-out transform'/>
             
@@ -49,7 +64,9 @@ const Gigs = () => {
       
 
     </div>
+    
   )
+  
 }
 
 export default Gigs
