@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useRef, useEffect } from 'react'
 import { FaBars, FaUser, FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import ScreenSizeDetector from 'screen-size-detector';
@@ -21,10 +21,26 @@ const checkfull=()=>{
   const [isFull, setisFull]=useState(checkfull);
   const [showFeatures, setShowFeatures] = useState(!isMobile);
   const [showCats, setShowCats] = useState(!isFull);
+  const dropdownRef = useRef(null);
+  const browseDropdownRef = useRef(null);
+  const MenuDropdownRef = useRef(null);
+
+  const handleBodyClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+  const handleBrowseout=(event)=>{
+    if(isMobile && browseDropdownRef.current && !browseDropdownRef.current.contains(event.target)){
+      setShowCats(false)
+    }
+  }
+  const handlemenuout = (event) => {
+    if (isMobile && MenuDropdownRef.current && !MenuDropdownRef.current.contains(event.target)) {
+      setShowFeatures(false);
+    }
+  };
   
-
-
-
   const  handleResize=()=>{
     if (screen.width < 768) {
       setisMobile(true);
@@ -46,9 +62,39 @@ const checkfull=()=>{
         setShowCats(true);
     }
   };
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('click', handleBodyClick);
+    }
 
-  window.addEventListener("resize",handleResize);
-  window.addEventListener("resize",handleFull);
+    return () => {
+      document.removeEventListener('click', handleBodyClick);
+    };
+  }, [open]);
+  useEffect(() => {
+    if (showCats) {
+      document.addEventListener('click', handleBrowseout);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleBrowseout);
+    };
+  }, [showCats]);
+  useEffect(() => {
+    if (showFeatures) {
+      document.addEventListener('click', handlemenuout);
+    }
+
+    return () => {
+      document.removeEventListener('click', handlemenuout);
+    };
+  }, [showFeatures]);
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleFull);
+
+    
+  
 
   
 
@@ -82,15 +128,15 @@ return (
     <div className='sticky top-0 z-[999] w-full'>
       <div name='container' className='flex items-center bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg sticky top-0 z-[999]'>
 
-         <div name='opt' className='object-cover cursor-pointer relative order-1 md:order-2'><FaBars className='text-[#E0E1DD] h-[25px] w-[25px] md:hidden' onClick
-         ={handleBarsClick} />
+         <div name='opt' className='object-cover cursor-pointer relative order-1 md:order-2' ref={MenuDropdownRef}>
+          <FaBars className='text-[#E0E1DD] h-[25px] w-[25px] md:hidden' onClick={handleBarsClick} />
          {showFeatures && <><div name="features" className={isMobile ? 'fordrop absolute top-[2pc] left-3 z-20' : 'flex flex-row justify-between gap-7'}>
           <div className={isMobile ?'foroptspa group':'dropd group'}>
-                <span className={isMobile ?'':'fortext'}>Business
-                </span><FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
+                <span className={isMobile ?'':'fortext'}>Business</span>
+                <FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
               </div>
               <div className={isMobile ?'foroptspa group':'dropd group'}>
-                <span className={isMobile ?'':'fortext'}>Explore
+                <span className={isMobile ?'':'fortext'}>Discover
                 </span><FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
               </div>
               <div className={isMobile ?'foroptspa':'dropd'}>
@@ -115,10 +161,10 @@ return (
             </div>}
 
           {currentUser && (
-            <div name="user" className='md:hover:bg-[#415A77] md:px-2 md:py-1 md: rounded-lg flex items-center gap-1 relative cursor-pointer order-4 ' onClick={()=>setOpen(!open)}>
+            <div name="user" className='md:hover:bg-[#415A77] md:px-2 md:py-1 md: rounded-lg flex items-center gap-1 relative cursor-pointer order-4 ' onClick={()=>setOpen(!open)} ref={dropdownRef}>
               <FaUser className='h-[25px] w-[25px] rounded-full object-cover text-[#0D1B2A] bg-[#E0E1DD] p-1'/>
               <span className='fortext tracking-tight hidden md:block'>{currentUser?.username}</span>
-              {open && <div name="options" className="fordrop absolute top-[2pc] right-3 z-40">
+              {open && <div name="options" className="fordrop absolute top-[2pc] right-3 z-40" >
                 {currentUser?.isSeller && (
                   <>
                   <Link to="mygigs" className='foroptspa'>Gigs</Link>
@@ -137,14 +183,11 @@ return (
       </div>
       <hr></hr>
       <div className='relative'>
-      <div className="flex justify-start bg-[#415A77] shadow-3
-      xl" name="Menu">
-        <div className={isFull ? 'block':'hidden'} onClick
-         ={handleBrowseClick}>
+      <div className="flex justify-start bg-[#415A77] shadow-3xl" name="Menu">
+        <div className={isFull ? 'block':'hidden'} onClick={handleBrowseClick} ref={browseDropdownRef}>
         <div className='flex group items-center'>
-          <span className='fortext p-2 text-[15px] group-hover:text-[#0D1B2A] group-hover:font-semibold'>Browse By Category
-          </span>
-          <FaAngleDown className='forangle group-hover:text-[#0D1B2A] group-hover:font-semibold'/>
+          <span className='fortext p-2 text-[15px] group-hover:text-[#0D1B2A] group-hover:font-semibold'>Browse By Category</span>
+          <FaAngleDown className={`forangle group-hover:text-[#0D1B2A] group-hover:font-semibold ${showCats ? 'rotate-180' : ''}`}/>
         </div></div></div>{showCats && <><div className={isFull ?'fordrop w-[300px] absolute top-[2pc] left-3' :'flex h-[50px] justify-center gap-3 bg-[#415A77] shadow-3xl items-center relative z-0 p-3 flex-nowrap shrink-0'}>
 
           <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Technology & Programming</Link>
@@ -169,4 +212,3 @@ return (
 }
 
 export default Navbar
-

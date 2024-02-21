@@ -2,10 +2,11 @@ import React from 'react'
 
 const Gig = () => {
   return (
-    <div className='gig'>
-      Gig
+    <div>
+      gig
     </div>
   )
 }
 
 export default Gig
+
