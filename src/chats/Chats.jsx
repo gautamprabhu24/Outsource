@@ -45,6 +45,53 @@ const Chats = ({item}) => {
   };
   const shortenedMessage = message.substring(0, substringLength) + '...';
 
+import React,{useState,useRef,useEffect} from "react";
+import { Link } from "react-router-dom"
+import { FaComments,FaMagnifyingGlass } from "react-icons/fa6";
+const Chats = ({item}) => {
+  const [searchActive, setSearchActive] = useState(false);
+  const searchClose = useRef(null)
+  const [substringLength, setSubstringLength] = useState(100);
+  
+  useEffect(() => {
+    const updateSubstring = () => {
+      // Adjust substring length based on window width
+      const newSubstringLength = window.innerWidth < 600 ? 30 : 100; // Adjust as needed
+      setSubstringLength(newSubstringLength);
+    };
+    window.addEventListener('resize', updateSubstring);
+    updateSubstring();
+
+    return () => {
+      window.removeEventListener('resize', updateSubstring);
+    };
+  }, []);
+  const handleBodyClick = (event) => {
+    if (searchClose.current && !searchClose.current.contains(event.target)) {
+      setSearchActive(false);
+    }
+  };
+  useEffect(() => {
+    if (searchActive) {
+      document.addEventListener('click', handleBodyClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleBodyClick);
+    };
+  }, [searchActive]);
+  
+
+  const message = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+  maxime cum corporis esse aspernatur laborum dolorum? Animi
+  molestias aliquam, cum nesciunt, aut, ut quam vitae saepe repellat
+  nobis praesentium placeat.`;
+
+  const toggleSearchBar = () => {
+    setSearchActive(!searchActive);
+  };
+  const shortenedMessage = message.substring(0, substringLength) + '...';
+
   return (
    <div className="">
     <div name="container" className="" >
@@ -166,6 +213,9 @@ const Chats = ({item}) => {
           </Link>
         </div>
     </div>
+   </div>
+  );
+};
    </div>
   );
 };

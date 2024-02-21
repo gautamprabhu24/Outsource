@@ -128,6 +128,8 @@ const Mygigs=()=> {
       </div>
     </div>
   );
+  );
 }
 
+export default Mygigs;
 export default Mygigs;
